@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NightFall Corporation</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0f172a;
+color:white;
+}
+
+/* Header */
+
+.header{
+text-align:center;
+padding:20px;
+font-size:26px;
+font-weight:bold;
+background:#020617;
+letter-spacing:1px;
+}
+
+/* Tabs */
+
+.tabs{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+background:#1e293b;
+}
+
+.tab{
+padding:14px 25px;
+cursor:pointer;
+transition:all 0.3s ease;
+}
+
+.tab:hover{
+background:#334155;
+transform:scale(1.05);
+}
+
+.tab.active{
+background:#475569;
+}
+
+/* Content */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.content{
+opacity:0;
+transform:translateY(10px);
+transition:all 0.4s ease;
+display:none;
+}
+
+.content.show{
+display:block;
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+margin-top:0;
+}
+
+pre{
+white-space:pre-wrap;
+font-family:inherit;
+line-height:1.6;
+}
+
+/* Credits */
+
+.credits{
+margin-top:40px;
+font-size:14px;
+opacity:0.7;
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+.header{
+font-size:20px;
+padding:15px;
+}
+
+.tab{
+flex:1;
+text-align:center;
+padding:12px;
+font-size:14px;
+}
+
+.container{
+padding:15px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+NightFall Corporation
+</div>
+
+<div class="tabs">
+<div class="tab active" onclick="openTab('description', this)">Description</div>
+<div class="tab" onclick="openTab('roles', this)">Role Structure</div>
+</div>
+
+<div class="container">
+
+<div id="description" class="content show">
+
+<h2>Description</h2>
+
+<p>
+NightFall Corporation is an SCP RP faction which hosts daily events and trainings,
+we plan to expand into multiple games and eventually create our own map to host
+custom events and more.
+</p>
+
+<div class="credits">
+Made by Peterhans
+</div>
+
+</div>
+
+<div id="roles" class="content">
+
+<h2>Role Structure</h2>
+
+<pre>
+# THE ADMINISTRATOR
+Responsible for the coordination of all units during deployments and the oversight of major administrative and structural decisions within the Corporation.
+
+# THE COUNCIL
+The highest-ranking members of the server, operating directly under The Administrator. Responsible for the overall management of the server and the resolution of member-related matters. (16 years+)
+
+# THE ARCHITECT
+Lead designer of the revamped facility and its numerous morphs. (Usually a twink)
+
+# Executive Director
+A high-ranking member entrusted with supervising Division Overseers and enforcing the Nightfall Code of Conduct upon those who fail to comply.
+
+# Division Overseer
+Responsible for the supervision of four Unit Overseers and their respective operatives. Division Overseers form the backbone of the administrative branch and represent the lowest rank within the Executive Section.
+
+# Unit Overseer
+Senior Operatives who have demonstrated exceptional commitment to the cause and are granted the authority to lead a unit of five or more personnel in combat operations.
+
+# Veteran Operative
+Highly skilled and proven members of the faction, granted the privilege of serving within the most elite units of the Corporation.
+
+# Senior Operative
+An experienced and reliable member of the unit, regarded as a valuable asset during combat and coordinated operations.
+
+# Operative
+Operatives form the backbone of our forces and are responsible for carrying out the directives issued by The Council.
+
+# Probationary Operative
+Newly inducted members of the Corporation who are undergoing evaluation and must prove their discipline, loyalty, and capability in the field.
+
+# NOTABLE MENTIONS
+GOONING gif creator: our server's artist
+War reporter: Responsible for recording our NON war crimes
+</pre>
+
+</div>
+
+</div>
+
+<script>
+
+function openTab(tabId, element){
+
+let contents=document.querySelectorAll(".content");
+contents.forEach(c=>{
+c.classList.remove("show");
+});
+
+let tabs=document.querySelectorAll(".tab");
+tabs.forEach(t=>{
+t.classList.remove("active");
+});
+
+document.getElementById(tabId).classList.add("show");
+element.classList.add("active");
+
+}
+
+</script>
+
+</body>
+</html>
